@@ -79,6 +79,15 @@ no external dependencies.
 
 ## Usage Guide
 
+### Installation
+
+The package can be installed by running the following from the command line.
+```bash
+git clone https://github.com/kevinhsu996/fair-orientation.git
+cd fair-orientation
+pip install .
+```
+
 ### Setting up a problem instance
 
 Suppose $G$ is a 4-cycle $(1,2,3,4)$ together with a fifth vertex $5$
@@ -99,7 +108,7 @@ We use the ```GraphicalInstance``` class to represent the problem
 instance as follows.
 
 ```python
-from fairdivision import GraphicalInstance
+from fair_orientation import GraphicalInstance
 
 # Construct the graph G.
 G = GraphicalInstance([1, 2, 3, 4, 5],
@@ -120,7 +129,7 @@ and ```find_EFX_orientation``` functions. We reuse ```G``` from
 the above example.
 
 ```python
-from fairdivision import find_EF1_orientation, find_EFX_orientation
+from fair_orientation import find_EF1_orientation, find_EFX_orientation
 
 EF1_orientation = find_EF1_orientation(G)
 EFX_orientation = find_EFX_orientation(G)
