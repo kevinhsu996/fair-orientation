@@ -23,19 +23,19 @@ on Artificial Intelligence (ECAI 2025) [1].
 # Introduction
 ## Problem Overview
 
-Let $G=(V,E)$ be a graph. Suppose that each vertex represents an
-*agent* and each edge $e=\{i, j\}$ represents a *chore/task*
-that only agents $i$ and $j$ can perform. The edge $e$ is associated
-with a cost to each of its endpoints $i$ and $j$, represented by
-non-positive numbers denoted by $u_i(e)$ and $u_j(e)$. Note that
-it is possible that $e$ has different costs to $i$ and $j$ (i.e.
-perhaps agent $i$ finds task $e$ easier than agent $j$ does, in which
-case $u_i(e) > u_j(e)$). We
+Let $`G=(V,E)`$ be a graph. Suppose that each vertex represents an
+*agent* and each edge $`e=\{i, j\}`$ represents a *chore/task*
+that only agents $`i`$ and $`j`$ can perform. The edge $`e`$ is associated
+with a cost to each of its endpoints $`i`$ and $`j`$, represented by
+non-positive numbers denoted by $`u_i(e)`$ and $`u_j(e)`$. Note that
+it is possible that $`e`$ has different costs to $`i`$ and $`j`$ (i.e.
+perhaps agent $`i`$ finds task $`e`$ easier than agent $`j`$ does, in which
+case $`u_i(e) > u_j(e)`$). We
 can represent an *allocation*
 of the chores to the agents as an *orientation*
-of the graph $G$. Specifically, we do this by directing an edge
-$e=\{i, j\}$ toward the endpoint $i$ whenever we would like to
-allocate the chore $e$ to the agent $i$.
+of the graph $`G`$. Specifically, we do this by directing an edge
+$`e=\{i, j\}`$ toward the endpoint $`i`$ whenever we would like to
+allocate the chore $`e`$ to the agent $`i`$.
 
 In many real-life applications, the agents that vertices represent
 are humans or parties with conflicting interests. So, we would like
@@ -47,11 +47,11 @@ relaxations are called EF1 and EFX orientations, which have been
 studied widely in the fair division literature. In short, an allocation
 is
 
-1) EF1 if for each pair of agents $i \neq j$, agent $i$ possibly
-envies agent $j$, but ceases to envy $j$ if $i$ ignores the worst chore
+1) EF1 if for each pair of agents $`i \neq j`$, agent $`i`$ possibly
+envies agent $`j`$, but ceases to envy $`j`$ if $`i`$ ignores the worst chore
 allocated to them;
-2) EFX if for each pair of agents $i \neq j$, agent $i$ possibly
-envies agent $j$, but ceases to envy $j$ if $i$ ignores any single
+2) EFX if for each pair of agents $`i \neq j`$, agent $`i`$ possibly
+envies agent $`j`$, but ceases to envy $`j`$ if $`i`$ ignores any single
 chore allocated to them.
 
 This project implements the two algorithms for computing EF1 and EFX
@@ -90,8 +90,8 @@ pip install .
 
 ### Setting up a problem instance
 
-Suppose $G$ is a 4-cycle $(1,2,3,4)$ together with a fifth vertex $5$
-and edges $\{1,5\}$ and $\{3,5\}$, as shown below.
+Suppose $`G`$ is a 4-cycle $`(1,2,3,4)`$ together with a fifth vertex $5$
+and edges $`\{1,5\}`$ and $`\{3,5\}`$, as shown below.
 ```
 2 --- 1
 |   / |
@@ -99,7 +99,7 @@ and edges $\{1,5\}$ and $\{3,5\}$, as shown below.
 | /   |
 3 --- 4
 ```
-Suppose that each of the 4 edges on the 4-cycle $(1,2,3,4)$ has
+Suppose that each of the 4 edges on the 4-cycle $`(1,2,3,4)`$ has
 utility -1 to both of its endpoints, and that the two edges
 incident with vertex 5 have utility -1 to vertex 5 and utility
 0 to their other endpoints.
@@ -136,10 +136,10 @@ EFX_orientation = find_EFX_orientation(G)
 ```
 
 ### Interpreting the results
-We purposely chose the example instance $G$ to be one that has an
+We purposely chose the example instance $`G`$ to be one that has an
 EF1 orientation but no EFX orientation. 
 
-Since $G$ has an EF1 orientation, ```EF1_orientation``` is an
+Since $`G`$ has an EF1 orientation, ```EF1_orientation``` is an
 ```Orientation``` object. There are two ways to access its directed
 edges. The first is to call its class function ```get_directed_edges()```,
 which returns a Python dictionary in which each key is an edge ```e```,
@@ -173,7 +173,7 @@ way in case the user wants to design another function to orient
 the edges, and wants to see what edges are yet unoriented in the
 midst of the process.)
 
-On the other hand, because $G$ does not have an EFX orientation,
+On the other hand, because $`G`$ does not have an EFX orientation,
 the function call ```find_EFX_orientation(G)``` returns ```False```.
 Thus, the following assertion will run without error.
 
