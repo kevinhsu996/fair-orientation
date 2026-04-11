@@ -11,7 +11,7 @@ class Graph:
         """
         self.V = V
         self.E = [tuple(sorted(e)) for e in E]
-        self._next_vertex_label = max(self.V)+1 # Counter for the Graph._get_next_index function.
+        self._next_vertex_label = max(self.V)+1 # Counter for the Graph.get_next_vertex_label function.
     def get_vertices(self):
         return self.V
     def get_edges(self):
@@ -28,7 +28,7 @@ class Graph:
         return self._next_vertex_label
     def get_components(self):
         """
-        Returns the omponents of G.
+        Returns the components of G.
         :return: A list of the components of G, each of which is represented as a list of vertices.
         """
         visited = set()
@@ -60,8 +60,8 @@ class Graph:
 
 class DirectedGraph:
     """
-    A class representing a directed graph. The outneighbors of each vertex is stored using a dictionary, so looking
-    up the outneighborhood of a vertex takes O(1) time.
+    A class representing a directed graph. The out-neighbors of each vertex is stored using a dictionary, so looking
+    up the out-neighborhood of a vertex takes O(1) time.
     """
     def __init__(self):
         self.V = []
