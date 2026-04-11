@@ -78,7 +78,7 @@ def find_EFX_orientation(G):
             Go.set_util(e, G.get_util(e[0], e), G.get_util(e[1], e))
         else:
             # Subdivide the non-objective edges.
-            i, j, k = e[0], e[1], Go.get_next_index()
+            i, j, k = e[0], e[1], Go.get_next_vertex_label()
             eik = (i, k)
             ejk = (j, k)
 

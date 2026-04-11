@@ -11,19 +11,21 @@ class Graph:
         """
         self.V = V
         self.E = [tuple(sorted(e)) for e in E]
+        self._next_vertex_label = max(self.V)+1 # Counter for the Graph._get_next_index function.
     def get_vertices(self):
         return self.V
     def get_edges(self):
         return self.E
     def add_vertex(self, name):
         self.V.append(name)
+        self._next_vertex_label += 1
     def add_edge(self, e):
         self.E.append(tuple(sorted(e)))
-    def get_next_index(self):
+    def get_next_vertex_label(self):
         """
         Returns a positive integer that has not been used as a vertex label. Useful when adding a new vertex.
         """
-        return max(self.V)+1
+        return self._next_vertex_label
     def get_components(self):
         """
         Returns the omponents of G.
